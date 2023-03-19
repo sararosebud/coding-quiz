@@ -10,16 +10,18 @@ var questionContainer = document.getElementById("question-container");
 var questionIndex = 0;
 var highScoreContainer = document.getElementById("high-score-container");
 
+
+
 var questions = [
   {
-    question:"Question1", 
-    choices: ["A", "b", "c", "d"], 
-    answer: "d"
+    question:"What is HTML short for?", 
+    choices: ["Hi There My Love", "He Took My Lettuce", "Hyper Theory Mopping Lines", "HyperText Markup Language"], 
+    answer: "HyperText Markup Language"
   }, 
   {
-    question:"Question2", 
-    choices: ["A", "b", "c", "d"], 
-    answer: "d"
+    question:"Which Tag is used to create a hyperlink?", 
+    choices: ["<a>", "<b>", "<p>", "<div>"], 
+    answer: "<a>"
   },
   {
     question:"Question3", 
@@ -38,21 +40,21 @@ var questions = [
   },
 ] 
 
+var quizTimer;
+
 function renderQuestions() {
   var quizBox = document.createElement('div');
-  var prompt =document.createElement('p');
-  prompt.textContent = questions[questionIndex].question
-  quizBox.append(prompt)
+  var prompt = document.createElement('p');
+  prompt.textContent = questions[questionIndex].question;
+  quizBox.append(prompt);
 
   for (i=0; i < questions[questionIndex].choices.length; i++) {
     var choice = document.createElement('button');
     choice.textContent = questions[questionIndex].choices[i]
-    choice.style.display = "block"
-    quizBox.append(choice)
+    choice.setAttribute("style", "width: 500px; height: 100px; background-color: lightgray; font-size: 30px;");
+    quizBox.append(choice);
   }
   
-
-
   questionContainer.append(quizBox)
 
 
@@ -65,6 +67,9 @@ function handleQuestionClick(e) {
 
   } else {
     console.log('incorrect')
+    
+
+
   }
 
   questionIndex++
@@ -72,11 +77,16 @@ function handleQuestionClick(e) {
   questionContainer.innerHTML = ""
 
   if (questionIndex > questions.length - 1) {
-    endQuiz()
+    endQuiz();
+    
+
+    
   } else {
     renderQuestions()   
 
   }
+
+  
 
 
   }
@@ -84,7 +94,8 @@ function handleQuestionClick(e) {
 function endQuiz() {
   questionContainer.style.display = "none";
   highScoreContainer.classList.remove('hide');
-
+   
+  
 }
 
 
@@ -93,43 +104,53 @@ startButton.addEventListener("click", startQuiz)
 questionContainer.addEventListener('click', handleQuestionClick)
 
 function startQuiz() {
+  
+  startTimer();
+  renderQuestions();
+  
+   
+}
 
-  // timer function
-  var timeLeft = 5;
-  var quizTimer = setInterval(function () {
-    if (timeLeft <= 0) {
-      clearInterval(quizTimer);
-      document.getElementById("timer").innerHTML = "Game Over!";
-     
-      
-      
-      
-    } else {
-      document.getElementById("timer").innerHTML =
-      timeLeft + " seconds remaining ";
-    }
-    timeLeft -= 1;
+function startTimer() {
+var timeLeft = 75;
+var quizTimer = setInterval(function () {
+  if (timeLeft <= 0) {
+    clearInterval(quizTimer);
+    document.getElementById("timer").innerHTML = "Game Over!";  
     
-  }, 1000);
+               
+  } else {
+    document.getElementById("timer").innerHTML =
+    timeLeft + " seconds remaining ";
+  }
 
-    renderQuestions();
-
+  timeLeft -= 1;
+  
+  
+}, 1000);
 }
 
 
 
 
+// todo
+// decrement timer if answer is wrong
+// end timer when quiz has ended
 
 
 
 
+// if (questionIndex > questions.length - 1) {
+//   clearInterval(quizTimer);
 
+    
+// }
 
-// start button function needs to start timer and populate questions
-// create questions
+// start button function needs to start timer and populate questions-done
+// create questions-done
 
 // create reset function
-// loop questions
+// loop questions-done
 // create high score and user input stored data
 // const initials = prompt("Enter Your Initials");
 // document.getElementById("highScoreTracker").innerHTML = "High Score, " + initials;
@@ -160,3 +181,12 @@ function startQuiz() {
 //     console.log('clickedbutton')
 
 //   });
+
+// function endQuizTimer(){
+//   var questionsCount = 0;
+  
+//   var questionsCompleted = setInterval(function (){
+//     if (questions[questionsCount]===undefined){
+//       clearInterval(questionsCompleted);
+//     }
+//   }) }

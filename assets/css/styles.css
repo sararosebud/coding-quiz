@@ -48,8 +48,8 @@ form {
 
 button:hover {
   cursor: pointer;
-  background-color: blueviolet;
-  color: blue;
+  background-color: rgb(239, 239, 144);
+  color: rgb(157, 157, 173);
 }
 /* centers quiz area (main) */
 main {
@@ -63,7 +63,7 @@ main {
   display: block;
   flex: auto;
   justify-content: space-around;
-  border: 2px solid black;
+  border: 2px dashed rgb(92, 89, 89);
   text-align: center;
   margin: 0 25%;
   padding-inline-start: 1.6rem;
@@ -82,8 +82,8 @@ main {
 
 .question-container {
   font-size: 30px;
-  border: 10px solid black;
-  background-color: blue;
+  border: 2px solid rgb(243, 235, 142);
+  background-color: rgb(174, 154, 165);
   text-align: center;
   display: flex;
   flex-wrap: wrap;
