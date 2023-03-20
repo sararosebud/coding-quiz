@@ -44,11 +44,7 @@
       <div id="results"></div> -->               
     </div>
 
-    <div id="time-up-container" class="timeUp hide">
-      <div class="time-up-container">
-        <div class= "card-contents"></div>
-          <h1>Time Ran Out, Click to Reset</h1>
-            <button id="resetTimeUp">RESET</button>
+   
 
     <div id="high-score-container" class="hide high-score-container">
         <form id="highScoreTracker" class="highScoreTracker">
@@ -60,14 +56,26 @@
                     <input id="reset" type="reset" value="Reset">
                     <input id="submit" type="submit" value="Submit">
               
-
                 </div>
     
         </form>
-
+     
        
 
   </div>
+
+  <div id="saved-high-scores" class="card column sidebar" style="width: 25%">
+    <h2>High Scores:</h2>
+    <p><strong>User</strong> <span id="user-initials"></span></p>
+    <p><strong>HighScoreTracked</strong> <span id="user-high-score-log"></span></p>
+  </div>
+
+
+  <div id="time-up-container" class="timeUp hide">
+    <div class="time-up-container">
+      <div class= "card-contents"></div>
+        <h1>Time Ran Out, Click to Reset</h1>
+          <button id="resetTimeUp">RESET</button>
   <script src="./assets/js/script.js"></script>
 
   </body>

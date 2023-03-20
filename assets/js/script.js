@@ -146,7 +146,7 @@ function timeOut() {
 
 }
 var quizTimer;
-var timeLeft = 5;
+var timeLeft = 45;
 function startTimer() {
 
  quizTimer = setInterval(function () {
@@ -176,32 +176,28 @@ function startTimer() {
 
 
 // todo
-// decrement timer if answer is wrong
-// end timer when quiz has ended
-
-
-
-
-// if (questionIndex > questions.length - 1) {
-//   clearInterval(quizTimer);
-
-    
-// }
-
-// start button function needs to start timer and populate questions-done
-// create questions-done
-
-// create reset function
-// loop questions-done
 // create high score and user input stored data
 // const initials = prompt("Enter Your Initials");
 // document.getElementById("highScoreTracker").innerHTML = "High Score, " + initials;
 
-// create questions
+// decrement timer if answer is wrong-done
+// end timer when quiz has ended-done
+
+
+
+
+
+
+// start button function needs to start timer and populate questions-done
+// create questions-done
+
+// create reset function-done
+// loop questions-done
+// create questions-done
 // questions = [
-//   new Question(
-//     "this is question one?",
-//     ["answers", "answers", "Correct Answer", "answer"],
+  //   new Question(
+    //     "this is question one?",
+    //     ["answers", "answers", "Correct Answer", "answer"],
 //     "Correct Answer"
 //   ),
 //   new Question(
@@ -217,7 +213,7 @@ function startTimer() {
 //   new Question("5?", ["b", "Correct Answer", "ee", "ss"], "Correct Answer"),
 // ];
 
-
+// code that i tried 
 // const startButton = document.getElementById("startButton");
 //   startButton.addEventListener("click", function(e) {
 //     console.log('clickedbutton')
@@ -232,3 +228,9 @@ function startTimer() {
 //       clearInterval(questionsCompleted);
 //     }
 //   }) }
+
+// if (questionIndex > questions.length - 1) {
+//   clearInterval(quizTimer);
+
+    
+// }
