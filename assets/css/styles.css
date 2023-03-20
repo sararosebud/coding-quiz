@@ -92,6 +92,15 @@ main {
   margin: 1% 25%;
   padding-inline-start: 1.6rem;
 }
+.time-up-container {
+  display: block;
+  flex: auto;
+  justify-content: space-around;
+  border: 2px dashed rgb(92, 89, 89);
+  text-align: center;
+  margin: 0 25%;
+  padding-inline-start: 1.6rem;
+}
 
 .timer {
   font-size: 30px;

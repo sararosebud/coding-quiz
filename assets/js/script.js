@@ -8,9 +8,20 @@ var reset = document.getElementById("reset")
 var highScoreTracker = document.getElementById("highScoreTracker");
 var questionContainer = document.getElementById("question-container");
 var questionIndex = 0;
+var score = 0;
+var resetTimeUpButton = document.getElementById('resetTimeUp')
+var resetTimeUpContainer = document.getElementById('time-up-container');
+
+
+resetTimeUpButton.addEventListener('click', function(e) {
+  location.reload();
+}, false);
+
+
 var highScoreContainer = document.getElementById("high-score-container");
 
 
+startButton.addEventListener("click", startQuiz)
 
 var questions = [
   {
@@ -57,18 +68,25 @@ function renderQuestions() {
   
   questionContainer.append(quizBox)
 
-
 }
-
+ 
 function handleQuestionClick(e) {
+
   var questionClicked = e.target.textContent
   if (questionClicked === questions[questionIndex].answer) {
     console.log('correct')
+    
+
+    score++
+    scoreProgress.innerHTML = "Score: " +score
+             
 
   } else {
     console.log('incorrect')
-    
-
+      timeLeft -= 15;
+      alert('incorrect!'); 
+      
+                      
 
   }
 
@@ -78,6 +96,8 @@ function handleQuestionClick(e) {
 
   if (questionIndex > questions.length - 1) {
     endQuiz();
+    
+    
     
 
     
@@ -92,8 +112,12 @@ function handleQuestionClick(e) {
   }
 
 function endQuiz() {
+  
   questionContainer.style.display = "none";
   highScoreContainer.classList.remove('hide');
+  clearInterval(quizTimer);
+  document.getElementById("timer").innerHTML = "All Done!";
+  scoreProgress.innerHTML = "Your Final Score: " +score
    
   
 }
@@ -111,14 +135,31 @@ function startQuiz() {
    
 }
 
+function timeOut() {
+    
+  document.getElementById("timer").innerHTML = "Time Ran Out!";
+      questionContainer.style.display = "none";
+    scoreProgress.innerHTML = "Your Final Score: 0"
+    resetTimeUpContainer.classList.remove('hide');
+    resetTimeUpButton.setAttribute("style", "width: 500px; height: 100px; background-color: lightgray; font-size: 30px;");
+
+
+}
+var quizTimer;
+var timeLeft = 5;
 function startTimer() {
-var timeLeft = 75;
-var quizTimer = setInterval(function () {
+
+ quizTimer = setInterval(function () {
   if (timeLeft <= 0) {
     clearInterval(quizTimer);
-    document.getElementById("timer").innerHTML = "Game Over!";  
+    timeOut();
     
-               
+    
+    // document.getElementById("timer").innerHTML = "Game Over!";
+    // document.createElement("reset").innerHTML = "reset quiz";
+    // questionContainer.style.display = "none";
+    // scoreProgress.innerHTML = "Your Final Score: 0" 
+                            
   } else {
     document.getElementById("timer").innerHTML =
     timeLeft + " seconds remaining ";
@@ -129,6 +170,7 @@ var quizTimer = setInterval(function () {
   
 }, 1000);
 }
+
 
 
 
