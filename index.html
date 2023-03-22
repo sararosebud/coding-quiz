@@ -12,19 +12,18 @@
 
   <body>
     <header class="main-header" id="mainhead">
-      <h1>Test Your Knowledge</h1>
-      <h2>
-        <a class="highscore" id="highscore">Click to View Your High Score</a>
+      <h1>Test Your JavaScript Fundamentals Knowledge</h1>
+      <h2> Quiz is timed, and wrong answers are penalized 15 seconds. Store your high score to compare to other user's knowledge!
       </h2>
       
-      <!--this may need to change and will need a click event added to it-->
+     
     </header>
 
     <div class="start-button-container" id= "start-button-container">
       <button type="button" id="startButton" class="startbutton">Start Quiz</button>   
     
          <div id="timer" class="timer">Time Remaining</div>
-         <div id="scoreProgress" class="scoreprogress">Score</div>
+         <div id="scoreProgress" class="scoreprogress" style="font-size: 25px;">Current Score: </div>
 
     </div>
     
@@ -48,7 +47,7 @@
 
     <div id="high-score-container" class="hide high-score-container">
         <form id="highScoreTracker" class="highScoreTracker">
-            <h1>Enter Your Initials to store High Score</h1>
+            <h1>Enter Your Initials to Save Your High Score</h1>
                 <div>
                     <label for="initials">Initials:</label>
                     <input id="initials" type="text" placeholder="Enter your initials here">
@@ -60,24 +59,34 @@
     
         </form>
      
-       
+        <!-- <div class="wrapper">
+          <h1>Highscores</h1>
+          <ol id="highscores"></ol>
+    
+          
+          <button id="clear">Clear Highscores</button>
+        </div> -->
 
   </div>
 
   <div id="saved-high-scores" class="card column sidebar" style="width: 25%">
     <h2>High Scores:</h2>
-    <p><strong>User</strong> <span id="user-initials"></span></p>
-    <p><strong>HighScoreTracked</strong> <span id="user-high-score-log"></span></p>
+   
+      <ol id="high-score-list"></ol>
   </div>
 
 
   <div id="time-up-container" class="timeUp hide">
     <div class="time-up-container">
       <div class= "card-contents"></div>
-        <h1>Time Ran Out, Click to Reset</h1>
-          <button id="resetTimeUp">RESET</button>
+        <h1>Time Ran Out, Click to Try Again</h1>
+          <button id="resetTimeUp">Try Again</button>
+
+          
   <script src="./assets/js/script.js"></script>
 
+
+  
   </body>
 
  

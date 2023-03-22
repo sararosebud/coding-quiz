@@ -7,7 +7,8 @@ body {
   margin: 0;
 }
 .sidebar {
-  height:25%;
+  
+  height:fit-content;
   width: 15px;
   position: absolute;
   left: 0;
@@ -17,9 +18,11 @@ body {
   }
   
   .sidebar div {
+  display: flex;
+  flex-wrap: wrap;
   padding: 1.6rem;
+  margin-left: 10px;
   font-size: 24px;
-  display: block;
  
   }
 
@@ -28,11 +31,16 @@ body {
 /*top section already styled do not touch unless you're changing color scheme*/
 
 .main-header {
-    display: flex;
-  justify-content: space-between;
-  padding: 1.6rem;
+  
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content:space-around;
+  padding: 2.5rem;
   background: lightcoral;
   color: #ffff00;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 form {
   font-size: 15px;
@@ -53,7 +61,7 @@ form {
 }
 
 .btn {
-  font-size: 30px;
+  font-size: 20px;
   width: fit-content;
   border-radius: 10px;
   display: flex;
@@ -104,7 +112,7 @@ main {
 .question-container {
   font-size: 30px;
   border: 2px solid rgb(243, 235, 142);
-  background-color: rgb(174, 154, 165);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   display: flex;
   flex-wrap: wrap;
