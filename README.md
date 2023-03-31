@@ -7,7 +7,7 @@
 
 ## Installation
 
-Visit [here](https://github.com/sararosebud/coding-quiz/actions/runs/4570904057) to take the quiz and test your knowledge. 
+Visit [here](https://sararosebud.github.io/coding-quiz/) to take the quiz and test your knowledge. 
 
 
 ## Usage
