@@ -26,19 +26,26 @@ var questions = [
     answer: "<a>"
   },
   {
-    question:"Question3", 
-    choices: ["A", "b", "c", "d"], 
-    answer: "d"
+    question:"Inside which HTML element do we put the JavaScript?", 
+    choices: ["<javascript>", "<script>", "<js>", "script.js"], 
+    answer: "<script>"
   },
   {
-    question:"Question4", 
-    choices: ["A", "b", "c", "d"], 
-    answer: "d"
+    question:"JavaScript accepts both double and single quotes:", 
+    choices: ["True", "False"], 
+    answer: "True"
   },
   {
-    question:"Question5", 
-    choices: ["A", "b", "c", "d"], 
-    answer: "d"
+    question:"JavaScript is the same as Java.", 
+    choices: ["True", "False"], 
+    answer: "False"
+    
+  },
+  {
+    question:"How to insert a comment that has more than one line?",
+    choices: ["<!--This comment has more than one line-->", "/*This comment has more than one line*/", "//This comment has more than one line//"], 
+    answer: "/*This comment has more than one line*/" 
+    
   },
 ] 
 
@@ -116,8 +123,14 @@ function startQuiz() {
   renderQuestions();
   startButton.style.display = "none";
   
+  
+  
    
 }
+
+
+
+
 // stop quiz when time runs out, show final score, hide question container
 function timeOut() {
     
@@ -167,13 +180,6 @@ localStorage.setItem("highScores", JSON.stringify(highScores))
 
 renderHighScores(highScores);
 
-// tried this first to test local storage
-//   window.localStorage.setItem('score', score);
-// console.log('scorelog')
-
-// var savedInitials = document.getElementById("initials").value.trim();
-// console.log('saved initials')
-// window.localStorage.setItem('initials', savedInitials);
 }
 
 // populates high scores into an ordered list in the html sidebar on the top left
@@ -186,6 +192,8 @@ function renderHighScores(scores) {
   }
 
 }
+
+
 // event listeners 
 
 startButton.addEventListener("click", startQuiz)
@@ -201,8 +209,15 @@ document.querySelector('#highScoreTracker').addEventListener("submit",function(e
   restartButton.addEventListener('click', function(){ 
     highScoreContainer.style.display = "none";
     questionIndex = 0;
+    score = 0;
+    timeLeft = 45;
     questionContainer.style.display = "block";
-    startQuiz()
+    
+    startQuiz();
+    
+    
+    
+    
   })
 } )
 
@@ -212,6 +227,10 @@ resetTimeUpButton.addEventListener('click', function(e) {
 }, false);
 
 
+
+
+
+// add event listener to the restart button
 
 
 
